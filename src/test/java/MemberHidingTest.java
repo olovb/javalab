@@ -10,7 +10,7 @@ class MyBase extends MyUrBase {
     int n;
     static int m;
 
-    static String hello() { return "Hello base."; }
+    static String hello() { return "Hello from base."; }
 
 }
 
@@ -33,8 +33,9 @@ class MyThing extends MyBase {
         return MyUrBase.x;
     }
 
-    // The following method may not hide the override-equivalent
-    // in the HelloBase class:
+    // The following method may not hide the override-equivalent one
+    // in the base class since the former isn't return-type-substitutable
+    // for the latter:
     //static int hello() { return 42; }
 
 } 
