@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals; 
+import static org.junit.Assert.assertEquals; 
 import static org.junit.Assert.assertTrue; 
 
 enum Engine {
@@ -24,6 +25,13 @@ public class EnumTest {
         Engine[] engines = Engine.values();
         assertArrayEquals(engines, 
                 new Engine[]{Engine.ELECTRIC, Engine.STEAM});
+    }
+
+    @Test
+    public void testValueOf() {
+        for(String s : new String[]{"ELECTRIC", "STEAM"}) {
+            assertEquals(Engine.valueOf(s).toString(), s);
+        }
     }
 
     @Test 
